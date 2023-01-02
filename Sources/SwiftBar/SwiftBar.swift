@@ -93,7 +93,7 @@ public func aeon(_ type: AeonType, _ message: String = " Loading".bold, _ comple
     )
 }
 
-public func aeon(_ type: AeonType, _ message: String = " Loading".bold, _ completeMessage: String = " Completed".bold, handlers: (() -> Void, () -> Void) -> Void) -> Void {
+public func aeon(_ type: AeonType, _ message: String = " Loading".bold, _ completeMessage: String = " Completed".bold, handlers: (@escaping () -> Void, @escaping  () -> Void) -> Void) -> Void {
 
     let aeonBar = aeon(type, message, completeMessage)
 
