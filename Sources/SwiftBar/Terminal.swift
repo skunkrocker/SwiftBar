@@ -21,6 +21,18 @@ public struct VintageInfo {
     let lineTails: String
     let lineIcon: String
     var isPath = false
+
+
+    public init(lineHead: String, lineTails: String, lineIcon: String, isPath: Bool) {
+        self.lineHead = lineHead
+        self.lineTails = lineTails
+        self.lineIcon = lineIcon
+        self.isPath = isPath
+    }
+
+     public init(lineHead: String, lineTails: String, lineIcon: String) {
+        self.init(lineHead: lineHead,lineTails: lineTails, lineIcon: lineIcon, isPath: false)
+    }
 }
 
 extension TerminalController {
