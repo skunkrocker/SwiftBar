@@ -2,13 +2,13 @@ import Rainbow
 import TSCBasic
 import Foundation
 
-enum BarType {
+public enum BarType {
     case pac
     case pac2
     case bars
 }
 
-enum AeonType {
+public enum AeonType {
     case led
     case led2
     case moon

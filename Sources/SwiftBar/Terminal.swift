@@ -14,9 +14,9 @@ func localTerminal() -> (get: () -> TerminalController, width: () -> Int) {
     )
 }
 
-let terminal = localTerminal()
+public let terminal = localTerminal()
 
-struct VintageInfo {
+public struct VintageInfo {
     let lineHead: String
     let lineTails: String
     let lineIcon: String
