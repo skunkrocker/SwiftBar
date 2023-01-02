@@ -93,6 +93,14 @@ public func aeon(_ type: AeonType, _ message: String = " Loading".bold, _ comple
     )
 }
 
+public func aeon(_ type: AeonType, _ message: String = " Loading".bold, _ completeMessage: String = " Completed".bold, handlers: (() -> Void, () -> Void) -> Void) -> Void {
+
+    let aeonBar = aeon(type, message, completeMessage)
+
+    handlers(aeonBar.start, aeonBar.complete)
+}
+
+
 ///Sleep without thread blocking
 public func sleep() {
     var i = 0
