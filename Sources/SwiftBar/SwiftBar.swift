@@ -2,7 +2,7 @@ import Rainbow
 import TSCBasic
 import Foundation
 
-func barr(type: BarType = .pac, total: Int = 100) -> (Int) -> Void {
+public func barr(type: BarType = .pac, total: Int = 100) -> (Int) -> Void {
     
     let width = terminal.width()
     let iterm = terminal.get()
@@ -15,7 +15,7 @@ func barr(type: BarType = .pac, total: Int = 100) -> (Int) -> Void {
 }
 
 
-func barrr(type: BarType = .pac, total: Int = 100) -> (update: (Int) -> Void, complete: () -> Void) {
+public func barrr(type: BarType = .pac, total: Int = 100) -> (update: (Int) -> Void, complete: () -> Void) {
     
     let width = terminal.width()
     let iterm = terminal.get()
@@ -34,7 +34,7 @@ func barrr(type: BarType = .pac, total: Int = 100) -> (update: (Int) -> Void, co
     )
 }
 
-func barz(type: BarType = .pac, total: Int = 100) -> (update: (Int, String?) -> Void, complete: () -> Void) {
+public func barz(type: BarType = .pac, total: Int = 100) -> (update: (Int, String?) -> Void, complete: () -> Void) {
     
     let width = terminal.width()
     let iterm = terminal.get()
@@ -65,7 +65,7 @@ func barz(type: BarType = .pac, total: Int = 100) -> (update: (Int, String?) -> 
     )
 }
 
-func aeon(_ type: AeonType, _ message: String = " Loading".bold, _ completeMessage: String = " Completed".bold ) -> (start: () -> Void, complete: () -> Void){
+public func aeon(_ type: AeonType, _ message: String = " Loading".bold, _ completeMessage: String = " Completed".bold ) -> (start: () -> Void, complete: () -> Void){
      let iterm = terminal.get()
     var isRunning = true
     var currentIndex = 0
