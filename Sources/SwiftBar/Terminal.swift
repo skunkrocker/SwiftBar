@@ -1,7 +1,7 @@
 import TSCBasic
 import Foundation
 
-func localTerminal() -> (get: () -> TerminalController, width: () -> Int) {
+public func localTerminal() -> (get: () -> TerminalController, width: () -> Int) {
     let std_out = stdoutStream as WritableByteStream
     let terminal = TerminalController(stream: std_out)
     let termWidth = TerminalController.self.terminalWidth()!.to_d() * 0.9
@@ -25,18 +25,18 @@ public struct VintageInfo {
 
 extension TerminalController {
 
-    func vintagePrint(_ info: VintageInfo) {
+    public func vintagePrint(_ info: VintageInfo) {
         let message = self.vintageMessage(info)
         terminal.get().write(message + "\n")
     }
 
-    func vintagePrint(_ infos: [VintageInfo]) {
+    public func vintagePrint(_ infos: [VintageInfo]) {
         for info in infos {
             vintagePrint(info)
         }
     }
 
-    func vintagePrint(_ infos: [VintageInfo], header: String) {
+    public func vintagePrint(_ infos: [VintageInfo], header: String) {
         let width = terminal.width()
         let boldHeader = header.uppercased().bold
         let widthWithoutHeader = (width - boldHeader.utf8.count) / 2
@@ -49,7 +49,7 @@ extension TerminalController {
         }
     }
 
-    func vintageMessage(_ info: VintageInfo) -> String {
+    public func vintageMessage(_ info: VintageInfo) -> String {
         let width = terminal.width()
 
         let lineHeadBold = info.lineHead.uppercased().bold

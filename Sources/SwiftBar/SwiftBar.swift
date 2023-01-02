@@ -94,7 +94,7 @@ public func aeon(_ type: AeonType, _ message: String = " Loading".bold, _ comple
 }
 
 ///Sleep without thread blocking
-func sleep() {
+public func sleep() {
     var i = 0
     let longNumber = 10000 * 10000
     while i < longNumber {

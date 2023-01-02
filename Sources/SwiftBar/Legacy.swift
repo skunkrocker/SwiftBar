@@ -6,7 +6,7 @@ import Foundation
 //`tput cols 2>/dev/null`
 //tty terminals also support
 //`stty size 2>/dev/null`
-func termWidth() -> Int {
+public func termWidth() -> Int {
     var win = winsize()
     if ioctl(STDOUT_FILENO, TIOCGWINSZ, &win) == 0 {
         return Int(win.ws_col)
@@ -14,7 +14,7 @@ func termWidth() -> Int {
     return 80 //default
 }
 
-func standardBar(type: BarType = .pac, total: Int = 100) -> (Int) -> Void {
+public func standardBar(type: BarType = .pac, total: Int = 100) -> (Int) -> Void {
     let sout = FileHandle.standardOutput
     
     let w = Double(termWidth()) / 1.2

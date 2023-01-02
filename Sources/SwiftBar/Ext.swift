@@ -4,7 +4,7 @@ import TSCBasic
 
 extension FileHandle {
     
-    func write(string: String) {
+   public func write(string: String) {
         write(string.data(using: .utf8)!)
     }
     
@@ -14,7 +14,7 @@ extension FileHandle {
 }
 
 extension String {
-    static func *(char: String, count: Int) -> String {
+    public static func *(char: String, count: Int) -> String {
         var s = ""
         for _ in 0..<count {
             s.append(char)
@@ -24,13 +24,13 @@ extension String {
 }
 
 extension Int {
-    func to_d() -> Double {
+    public func to_d() -> Double {
         Double(self)
     }
 }
 
 extension Double {
-    func to_i() -> Int {
+    public func to_i() -> Int {
         Int(self)
     }
 }
