@@ -1,6 +1,11 @@
 # SwiftBar
 
 CLI Progress Bar in Swift.
+## Fonts
+It is strongly recommended to install [Nerd Fonts](https://www.nerdfonts.com)
+It may not work with regular fonts.
+## Term Type
+Dumb terminal is not supported
 
 ## Installation
 ```swift
@@ -38,3 +43,8 @@ enum AeonType {
     case signal
 }
 ```
+
+
+
+https://user-images.githubusercontent.com/6974023/210327475-678ff57c-5ed1-4220-a5e0-8a5fac0e34b0.mov
+
