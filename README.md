@@ -1,6 +1,7 @@
 # SwiftBar
 
-CLI Progress Bar for Swift.
+Progress Bar for Command Line Tools written in Swift.
+
 ## Fonts
 It is strongly recommended to install [Nerd Fonts](https://www.nerdfonts.com)
 It may not work with regular fonts.
