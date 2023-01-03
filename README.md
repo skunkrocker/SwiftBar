@@ -14,7 +14,7 @@ import PackageDescription
 let package = Package(
         name: "Your Package",
         dependencies: [
-            .package(url: "https://github.com/skunkrocker/SwiftBar.git", from: "1.0.1")
+            .package(url: "https://github.com/skunkrocker/SwiftBar.git", from: "1.0.2")
         ]
 )
 ```
@@ -63,17 +63,18 @@ print()
         
 var index = 0
         
-let pacMan = barz(total: files.count)
-files.forEach { file in
-   let  headerMessage = "Copying file ".blue.bold + TRAFIC_LIGHT + " " + file.green.bold
-            
-    pacMan.update(index + 1, headerMessage)
-         
-    //Do the Job here
-    
-    index += 1
+barz(total: files.count) { update, complete in
+    files.forEach { file in
+        let  headerMessage = "Copying file ".blue.bold + TRAFIC_LIGHT + " " + file.green.bold
+                
+        update(index + 1, headerMessage)
+                
+        //Do the heavy lifting here
+        
+        index += 1
+    }
+    complete()
 }
-pacMan.complete()
 ```
 
 
