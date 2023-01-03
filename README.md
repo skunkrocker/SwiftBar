@@ -57,6 +57,7 @@ https://user-images.githubusercontent.com/6974023/210327475-678ff57c-5ed1-4220-a
 ### Known duration
 
 To show the progress bar for Tasks with known duration
+
 ```swift
 print("Pac Bar".bold)
 print()
@@ -77,6 +78,15 @@ barz(type: .pac, total: files.count) { update, complete in
 }
 ```
 
+Use one of the BarType's to define the look and feel of the progress animation.
+
+```swift
+public enum BarType {
+    case pac
+    case pac2
+    case bars
+}
+```
 
 https://user-images.githubusercontent.com/6974023/210350009-5cee71c7-b8ab-4ba4-a811-509a740b6b12.mov
 
