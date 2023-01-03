@@ -23,14 +23,18 @@ let package = Package(
 Usage for Tasks of unknown duration, call the infinite (aeon) function block: 
 
 ```swift
-aeon(.led2, tarDwonloadMsg, tarDownloadCompleteMsg) { start, complete in
-            
-    runAsync(wget,"-P", "/tmp" ,  "https://some-url.com/some-file").onCompletion { command in
-        complete()
-        deleteWgetLog()
-        stopWaitingFn()
-    }
-    start()
+print("Signal Type".bold)
+let signalMsg = "🔥 Long Job".bold + " .signal ".blue + " type".bold
+let signalCompleteMsg = "Long Job".bold + " .signal ".blue + "type done".bold
+waitForAsync { stopWaiting in
+    aeon(.signal, signalMsg, signalCompleteMsg) { start, complete in
+       let wget = SwiftShell.run("which", "wget").stdout
+        runAsync(wget,"-P", "/tmp" , "http://ipv4.download.thinkbroadband.com/20MB.zip").onCompletion { command in
+            complete()
+            stopWaiting()
+        }
+        start()
+   }
 }
 ```
 
