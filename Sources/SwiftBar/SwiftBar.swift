@@ -65,6 +65,14 @@ public func barz(type: BarType = .pac, total: Int = 100) -> (update: (Int, Strin
     )
 }
 
+public func barz(_ type: BarType = .pac, total: Int = 100, handlers: (@escaping (Int, String?) -> Void, @escaping  () -> Void) -> Void) -> Void {
+    let progress = barz(type: type, total: total)
+
+    handlers(progress.update, progress.complete)
+
+}
+
+
 public func aeon(_ type: AeonType, _ message: String = " Loading".bold, _ completeMessage: String = " Completed".bold ) -> (start: () -> Void, complete: () -> Void){
      let iterm = terminal.get()
     var isRunning = true
