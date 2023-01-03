@@ -48,3 +48,6 @@ enum AeonType {
 
 https://user-images.githubusercontent.com/6974023/210327475-678ff57c-5ed1-4220-a5e0-8a5fac0e34b0.mov
 
+## Suggestions
+You may suggest new features.
+Please do so in a Pull Request.
