@@ -20,6 +20,8 @@ let package = Package(
 ```
 
 ## Usage
+### Unknown duration
+
 Usage for Tasks of unknown duration, call the infinite (aeon) function block: 
 
 ```swift
@@ -51,6 +53,32 @@ enum AeonType {
 
 
 https://user-images.githubusercontent.com/6974023/210327475-678ff57c-5ed1-4220-a5e0-8a5fac0e34b0.mov
+
+### Known duration
+
+To show the progress bar for Tasks with known duration
+```swift
+print("Pac Bar".bold)
+print()
+        
+var index = 0
+        
+let pacMan = barz(total: files.count)
+files.forEach { file in
+   let  headerMessage = "Copying file ".blue.bold + TRAFIC_LIGHT + " " + file.green.bold
+            
+    pacMan.update(index + 1, headerMessage)
+         
+    //Do the Job here
+    
+    index += 1
+}
+pacMan.complete()
+```
+
+
+https://user-images.githubusercontent.com/6974023/210350009-5cee71c7-b8ab-4ba4-a811-509a740b6b12.mov
+
 
 ## Suggestions
 You may suggest new features.
