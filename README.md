@@ -63,7 +63,7 @@ print()
         
 var index = 0
         
-barz(total: files.count) { update, complete in
+barz(type: .pac, total: files.count) { update, complete in
     files.forEach { file in
         let  headerMessage = "Copying file ".blue.bold + TRAFIC_LIGHT + " " + file.green.bold
                 
