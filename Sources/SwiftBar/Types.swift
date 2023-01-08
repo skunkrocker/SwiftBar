@@ -1,5 +1,6 @@
 import Rainbow
 import TSCBasic
+import SwiftExt
 import Foundation
 
 public enum BarType {

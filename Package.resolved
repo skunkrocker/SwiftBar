@@ -26,6 +26,15 @@
         "revision" : "284a41800b7c5565512ec6ae21ee818aac1f84ac",
         "version" : "0.4.0"
       }
+    },
+    {
+      "identity" : "swiftext",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/skunkrocker/SwiftExt.git",
+      "state" : {
+        "revision" : "829b5083612f4d26e997a2b8a7df0f4ec5288a73",
+        "version" : "1.0.0"
+      }
     }
   ],
   "version" : 2

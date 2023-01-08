@@ -1,5 +1,6 @@
 import Rainbow
 import TSCBasic
+import SwiftExt
 import Foundation
 
 public func barr(type: BarType = .pac, total: Int = 100) -> (Int) -> Void {
