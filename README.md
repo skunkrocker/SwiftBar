@@ -1,6 +1,7 @@
 # SwiftBar
 
-CLI Progress Bar for Swift.
+Progress Bar for Command Line Tools written in Swift.
+
 ## Fonts
 It is strongly recommended to install [Nerd Fonts](https://www.nerdfonts.com)
 It may not work with regular fonts.
@@ -14,7 +15,7 @@ import PackageDescription
 let package = Package(
         name: "Your Package",
         dependencies: [
-            .package(url: "https://github.com/skunkrocker/SwiftBar.git", from: "1.0.1")
+            .package(url: "https://github.com/skunkrocker/SwiftBar.git", from: "1.0.2")
         ]
 )
 ```
@@ -57,25 +58,36 @@ https://user-images.githubusercontent.com/6974023/210327475-678ff57c-5ed1-4220-a
 ### Known duration
 
 To show the progress bar for Tasks with known duration
+
 ```swift
 print("Pac Bar".bold)
 print()
         
 var index = 0
         
-let pacMan = barz(total: files.count)
-files.forEach { file in
-   let  headerMessage = "Copying file ".blue.bold + TRAFIC_LIGHT + " " + file.green.bold
-            
-    pacMan.update(index + 1, headerMessage)
-         
-    //Do the Job here
-    
-    index += 1
+barz(type: .pac, total: files.count) { update, complete in
+    files.forEach { file in
+        let  headerMessage = "Copying file ".blue.bold + TRAFIC_LIGHT + " " + file.green.bold
+                
+        update(index + 1, headerMessage)
+                
+        //Do the heavy lifting here
+        
+        index += 1
+    }
+    complete()
 }
-pacMan.complete()
 ```
 
+Use one of the BarType's to define the look and feel of the progress animation.
+
+```swift
+public enum BarType {
+    case pac
+    case pac2
+    case bars
+}
+```
 
 https://user-images.githubusercontent.com/6974023/210350009-5cee71c7-b8ab-4ba4-a811-509a740b6b12.mov
 
